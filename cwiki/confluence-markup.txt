@@ -1,0 +1,161 @@
+h1. LoIDE API LoIDE API
+
+*Version:* 1.0.0
+
+----
+
+{toc:printable=true|style=square|minLevel=2|maxLevel=3|type=list|outline=false|include=.*}
+
+h2. Endpoints
+
+    h3. getLanguages
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /languages
+    {code}
+    *Summary:* searches all the available languages
+    *Description:* By passing in the appropriate options, you can search for available languages in the system 
+
+
+    h4. Parameters
+
+
+
+        h5. Query Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |searchByEngine |pass an optional search string for looking up all the languages solved by that engine |(x) | |  |
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     search results matching criteria
+        {code:title=Response Type}
+array[Language]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "search results matching criteria",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/Language"
+    }
+  }
+}
+        {code}
+        *Status Code:* 400
+        *Message:*     bad input parameter
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "bad input parameter"
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     no language found
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "no language found"
+}
+        {code}
+    ----
+
+    h3. getLanguages
+    {status:colour=Yellow|title=get|subtle=false}
+    {code}
+    get /languages
+    {code}
+    *Summary:* searches all the available languages
+    *Description:* By passing in the appropriate options, you can search for available languages in the system 
+
+
+    h4. Parameters
+
+
+
+        h5. Query Parameters
+        ||Name||Description||Required||Default||Pattern||
+        |searchByEngine |pass an optional search string for looking up all the languages solved by that engine |(x) | |  |
+
+
+
+
+
+    h4. Responses
+        *Status Code:* 200
+        *Message:*     search results matching criteria
+        {code:title=Response Type}
+array[Language]
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "search results matching criteria",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/Language"
+    }
+  }
+}
+        {code}
+        *Status Code:* 400
+        *Message:*     bad input parameter
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "bad input parameter"
+}
+        {code}
+        *Status Code:* 404
+        *Message:*     no language found
+        {code:title=Response Type}
+
+        {code}
+        See [#models]
+
+
+
+        {code:title=Response Schema |collapse=true}
+{
+  "description" : "no language found"
+}
+        {code}
+    ----
+
+h2. Models
+
+        h3. Language
+        ||Field Name||Required||Type||Description||
+         |id | |String | |
+ |name | |String | |
+ |description | |String | |
