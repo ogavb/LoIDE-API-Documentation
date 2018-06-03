@@ -729,9 +729,13 @@ margin-bottom: 20px;
             -->
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
+                  <li class="nav-header" data-group="Admins"><a href="#api-Admins">API Methods - Admins</a></li>
+                    <li data-group="Admins" data-name="allLanguages" class="">
+                      <a href="#api-Admins-allLanguages">allLanguages</a>
+                    </li>
                   <li class="nav-header" data-group="Developers"><a href="#api-Developers">API Methods - Developers</a></li>
-                    <li data-group="Developers" data-name="searchInventory" class="">
-                      <a href="#api-Developers-searchInventory">searchInventory</a>
+                    <li data-group="Developers" data-name="allLanguages" class="">
+                      <a href="#api-Developers-allLanguages">allLanguages</a>
                     </li>
           </ul>
         </nav>
@@ -752,19 +756,19 @@ margin-bottom: 20px;
           </div>
         </div>
         <div id="sections">
-                <section id="api-Developers">
-                  <h1>Developers</h1>
-                    <div id="api-Developers-searchInventory">
-                      <article id="api-Developers-searchInventory-0" data-group="User" data-name="searchInventory" data-version="0">
+                <section id="api-Admins">
+                  <h1>Admins</h1>
+                    <div id="api-Admins-allLanguages">
+                      <article id="api-Admins-allLanguages-0" data-group="User" data-name="allLanguages" data-version="0">
                         <div class="pull-left">
-                          <h1>searchInventory</h1>
-                          <p>searches inventory</p>
+                          <h1>allLanguages</h1>
+                          <p>searches all the available languages</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
                         <p class="marked">By passing in the appropriate options, you can search for
-available inventory in the system
+available languages in the system
 </p>
                         <p></p>
                         <br />
@@ -773,86 +777,78 @@ available inventory in the system
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Developers-searchInventory-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Developers-searchInventory-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Developers-searchInventory-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Developers-searchInventory-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Developers-searchInventory-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Developers-searchInventory-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Developers-searchInventory-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Developers-searchInventory-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Developers-searchInventory-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Developers-searchInventory-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Developers-searchInventory-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Admins-allLanguages-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Admins-allLanguages-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Admins-allLanguages-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Admins-allLanguages-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Admins-allLanguages-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Admins-allLanguages-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Admins-allLanguages-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Admins-allLanguages-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Admins-allLanguages-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Admins-allLanguages-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Admins-allLanguages-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Developers-searchInventory-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/ogavb/LoIDE/1.0.0/languages?searchString=&skip=&limit="</code></pre>
+                          <div class="tab-pane active" id="examples-Admins-allLanguages-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/ogavb/LoIDE/1.0.0/languages?searchByEngine="</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Developers-searchInventory-0-java">
+                          <div class="tab-pane" id="examples-Admins-allLanguages-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.DevelopersApi;
+import io.swagger.client.api.AdminsApi;
 
 import java.io.File;
 import java.util.*;
 
-public class DevelopersApiExample {
+public class AdminsApiExample {
 
     public static void main(String[] args) {
         
-        DevelopersApi apiInstance = new DevelopersApi();
-        String searchString = searchString_example; // String | pass an optional search string for looking up inventory
-        Integer skip = 56; // Integer | number of records to skip for pagination
-        Integer limit = 56; // Integer | maximum number of records to return
+        AdminsApi apiInstance = new AdminsApi();
+        String searchByEngine = searchByEngine_example; // String | pass an optional search string for looking up all the languages solved by that engine
         try {
-            array[Language] result = apiInstance.searchInventory(searchString, skip, limit);
+            array[Language] result = apiInstance.allLanguages(searchByEngine);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DevelopersApi#searchInventory");
+            System.err.println("Exception when calling AdminsApi#allLanguages");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Developers-searchInventory-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DevelopersApi;
+                          <div class="tab-pane" id="examples-Admins-allLanguages-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.AdminsApi;
 
-public class DevelopersApiExample {
+public class AdminsApiExample {
 
     public static void main(String[] args) {
-        DevelopersApi apiInstance = new DevelopersApi();
-        String searchString = searchString_example; // String | pass an optional search string for looking up inventory
-        Integer skip = 56; // Integer | number of records to skip for pagination
-        Integer limit = 56; // Integer | maximum number of records to return
+        AdminsApi apiInstance = new AdminsApi();
+        String searchByEngine = searchByEngine_example; // String | pass an optional search string for looking up all the languages solved by that engine
         try {
-            array[Language] result = apiInstance.searchInventory(searchString, skip, limit);
+            array[Language] result = apiInstance.allLanguages(searchByEngine);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DevelopersApi#searchInventory");
+            System.err.println("Exception when calling AdminsApi#allLanguages");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Developers-searchInventory-0-groovy">
+  <div class="tab-pane" id="examples-Admins-allLanguages-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Developers-searchInventory-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *searchString = searchString_example; // pass an optional search string for looking up inventory (optional)
-Integer *skip = 56; // number of records to skip for pagination (optional)
-Integer *limit = 56; // maximum number of records to return (optional)
+                            <div class="tab-pane" id="examples-Admins-allLanguages-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *searchByEngine = searchByEngine_example; // pass an optional search string for looking up all the languages solved by that engine (optional)
 
-DevelopersApi *apiInstance = [[DevelopersApi alloc] init];
+AdminsApi *apiInstance = [[AdminsApi alloc] init];
 
-// searches inventory
-[apiInstance searchInventoryWith:searchString
-    skip:skip
-    limit:limit
+// searches all the available languages
+[apiInstance allLanguagesWith:searchByEngine
               completionHandler: ^(array[Language] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
@@ -864,15 +860,13 @@ DevelopersApi *apiInstance = [[DevelopersApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Developers-searchInventory-0-javascript">
+                            <div class="tab-pane" id="examples-Admins-allLanguages-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var LoIdeApi = require('lo_ide_api');
 
-var api = new LoIdeApi.DevelopersApi()
+var api = new LoIdeApi.AdminsApi()
 
 var opts = { 
-  'searchString': searchString_example, // {String} pass an optional search string for looking up inventory
-  'skip': 56, // {Integer} number of records to skip for pagination
-  'limit': 56 // {Integer} maximum number of records to return
+  'searchByEngine': searchByEngine_example // {String} pass an optional search string for looking up all the languages solved by that engine
 };
 
 var callback = function(error, data, response) {
@@ -882,14 +876,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.searchInventory(opts, callback);
+api.allLanguages(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Developers-searchInventory-0-angular">
+                            <!--<div class="tab-pane" id="examples-Admins-allLanguages-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Developers-searchInventory-0-csharp">
+                            <div class="tab-pane" id="examples-Admins-allLanguages-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -898,25 +892,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class searchInventoryExample
+    public class allLanguagesExample
     {
         public void main()
         {
             
-            var apiInstance = new DevelopersApi();
-            var searchString = searchString_example;  // String | pass an optional search string for looking up inventory (optional) 
-            var skip = 56;  // Integer | number of records to skip for pagination (optional) 
-            var limit = 56;  // Integer | maximum number of records to return (optional) 
+            var apiInstance = new AdminsApi();
+            var searchByEngine = searchByEngine_example;  // String | pass an optional search string for looking up all the languages solved by that engine (optional) 
 
             try
             {
-                // searches inventory
-                array[Language] result = apiInstance.searchInventory(searchString, skip, limit);
+                // searches all the available languages
+                array[Language] result = apiInstance.allLanguages(searchByEngine);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DevelopersApi.searchInventory: " + e.Message );
+                Debug.Print("Exception when calling AdminsApi.allLanguages: " + e.Message );
             }
         }
     }
@@ -924,44 +916,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Developers-searchInventory-0-php">
+                            <div class="tab-pane" id="examples-Admins-allLanguages-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\DevelopersApi();
-$searchString = searchString_example; // String | pass an optional search string for looking up inventory
-$skip = 56; // Integer | number of records to skip for pagination
-$limit = 56; // Integer | maximum number of records to return
+$api_instance = new Swagger\Client\Api\AdminsApi();
+$searchByEngine = searchByEngine_example; // String | pass an optional search string for looking up all the languages solved by that engine
 
 try {
-    $result = $api_instance->searchInventory($searchString, $skip, $limit);
+    $result = $api_instance->allLanguages($searchByEngine);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DevelopersApi->searchInventory: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdminsApi->allLanguages: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Developers-searchInventory-0-perl">
+                            <div class="tab-pane" id="examples-Admins-allLanguages-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::DevelopersApi;
+use WWW::SwaggerClient::AdminsApi;
 
-my $api_instance = WWW::SwaggerClient::DevelopersApi->new();
-my $searchString = searchString_example; # String | pass an optional search string for looking up inventory
-my $skip = 56; # Integer | number of records to skip for pagination
-my $limit = 56; # Integer | maximum number of records to return
+my $api_instance = WWW::SwaggerClient::AdminsApi->new();
+my $searchByEngine = searchByEngine_example; # String | pass an optional search string for looking up all the languages solved by that engine
 
 eval { 
-    my $result = $api_instance->searchInventory(searchString => $searchString, skip => $skip, limit => $limit);
+    my $result = $api_instance->allLanguages(searchByEngine => $searchByEngine);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling DevelopersApi->searchInventory: $@\n";
+    warn "Exception when calling AdminsApi->allLanguages: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Developers-searchInventory-0-python">
+                            <div class="tab-pane" id="examples-Admins-allLanguages-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -969,17 +957,15 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.DevelopersApi()
-searchString = searchString_example # String | pass an optional search string for looking up inventory (optional)
-skip = 56 # Integer | number of records to skip for pagination (optional)
-limit = 56 # Integer | maximum number of records to return (optional)
+api_instance = swagger_client.AdminsApi()
+searchByEngine = searchByEngine_example # String | pass an optional search string for looking up all the languages solved by that engine (optional)
 
 try: 
-    # searches inventory
-    api_response = api_instance.search_inventory(searchString=searchString, skip=skip, limit=limit)
+    # searches all the available languages
+    api_response = api_instance.all_languages(searchByEngine=searchByEngine)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DevelopersApi->searchInventory: %s\n" % e)</code></pre>
+    print("Exception when calling AdminsApi->allLanguages: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -995,11 +981,11 @@ except ApiException as e:
                                 <th width="150px">Name</th>
                                 <th>Description</th>
                               </tr>
-                                <tr><td style="width:150px;">searchString</td>
+                                <tr><td style="width:150px;">searchByEngine</td>
 <td>
 
 
-    <div id="d2e199_searchInventory_searchString">
+    <div id="d2e199_allLanguages_searchByEngine">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1007,53 +993,7 @@ except ApiException as e:
                 </span>
 
                     <div class="inner description">
-                        pass an optional search string for looking up inventory
-                    </div>
-            </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                                <tr><td style="width:150px;">skip</td>
-<td>
-
-
-    <div id="d2e199_searchInventory_skip">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    Integer
-                </span>
-                    <span class="format">
-                        (int32)
-                    </span>
-
-                    <div class="inner description">
-                        number of records to skip for pagination
-                    </div>
-            </div>
-        </div>
-    </div>
-</td>
-</tr>
-
-                                <tr><td style="width:150px;">limit</td>
-<td>
-
-
-    <div id="d2e199_searchInventory_limit">
-        <div class="json-schema-view">
-            <div class="primitive">
-                <span class="type">
-                    Integer
-                </span>
-                    <span class="format">
-                        (int32)
-                    </span>
-
-                    <div class="inner description">
-                        maximum number of records to return
+                        pass an optional search string for looking up all the languages solved by that engine
                     </div>
             </div>
         </div>
@@ -1068,14 +1008,14 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-searchInventory-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-allLanguages-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-searchInventory-200-schema">
-                                  <div id='responses-searchInventory-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-allLanguages-200-schema">
+                                  <div id='responses-allLanguages-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
@@ -1099,18 +1039,340 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-searchInventory-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-searchInventory-200-schema-200');
+                                        $('#responses-allLanguages-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-allLanguages-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-searchInventory-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-allLanguages-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
                             <h3> Status: 400 - bad input parameter </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 404 - no language found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                  </section>
+                <section id="api-Developers">
+                  <h1>Developers</h1>
+                    <div id="api-Developers-allLanguages">
+                      <article id="api-Developers-allLanguages-0" data-group="User" data-name="allLanguages" data-version="0">
+                        <div class="pull-left">
+                          <h1>allLanguages</h1>
+                          <p>searches all the available languages</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">By passing in the appropriate options, you can search for
+available languages in the system
+</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/languages</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Developers-allLanguages-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Developers-allLanguages-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Developers-allLanguages-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Developers-allLanguages-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Developers-allLanguages-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Developers-allLanguages-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Developers-allLanguages-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Developers-allLanguages-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Developers-allLanguages-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Developers-allLanguages-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Developers-allLanguages-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Developers-allLanguages-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/ogavb/LoIDE/1.0.0/languages?searchByEngine="</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Developers-allLanguages-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.DevelopersApi;
+
+import java.io.File;
+import java.util.*;
+
+public class DevelopersApiExample {
+
+    public static void main(String[] args) {
+        
+        DevelopersApi apiInstance = new DevelopersApi();
+        String searchByEngine = searchByEngine_example; // String | pass an optional search string for looking up all the languages solved by that engine
+        try {
+            array[Language] result = apiInstance.allLanguages(searchByEngine);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DevelopersApi#allLanguages");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Developers-allLanguages-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.DevelopersApi;
+
+public class DevelopersApiExample {
+
+    public static void main(String[] args) {
+        DevelopersApi apiInstance = new DevelopersApi();
+        String searchByEngine = searchByEngine_example; // String | pass an optional search string for looking up all the languages solved by that engine
+        try {
+            array[Language] result = apiInstance.allLanguages(searchByEngine);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DevelopersApi#allLanguages");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Developers-allLanguages-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Developers-allLanguages-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *searchByEngine = searchByEngine_example; // pass an optional search string for looking up all the languages solved by that engine (optional)
+
+DevelopersApi *apiInstance = [[DevelopersApi alloc] init];
+
+// searches all the available languages
+[apiInstance allLanguagesWith:searchByEngine
+              completionHandler: ^(array[Language] output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Developers-allLanguages-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var LoIdeApi = require('lo_ide_api');
+
+var api = new LoIdeApi.DevelopersApi()
+
+var opts = { 
+  'searchByEngine': searchByEngine_example // {String} pass an optional search string for looking up all the languages solved by that engine
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.allLanguages(opts, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Developers-allLanguages-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Developers-allLanguages-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class allLanguagesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new DevelopersApi();
+            var searchByEngine = searchByEngine_example;  // String | pass an optional search string for looking up all the languages solved by that engine (optional) 
+
+            try
+            {
+                // searches all the available languages
+                array[Language] result = apiInstance.allLanguages(searchByEngine);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DevelopersApi.allLanguages: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Developers-allLanguages-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\DevelopersApi();
+$searchByEngine = searchByEngine_example; // String | pass an optional search string for looking up all the languages solved by that engine
+
+try {
+    $result = $api_instance->allLanguages($searchByEngine);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DevelopersApi->allLanguages: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Developers-allLanguages-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::DevelopersApi;
+
+my $api_instance = WWW::SwaggerClient::DevelopersApi->new();
+my $searchByEngine = searchByEngine_example; # String | pass an optional search string for looking up all the languages solved by that engine
+
+eval { 
+    my $result = $api_instance->allLanguages(searchByEngine => $searchByEngine);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling DevelopersApi->allLanguages: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Developers-allLanguages-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DevelopersApi()
+searchByEngine = searchByEngine_example # String | pass an optional search string for looking up all the languages solved by that engine (optional)
+
+try: 
+    # searches all the available languages
+    api_response = api_instance.all_languages(searchByEngine=searchByEngine)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DevelopersApi->allLanguages: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+
+
+                            <div class="methodsubtabletitle">Query parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">searchByEngine</td>
+<td>
+
+
+    <div id="d2e199_allLanguages_searchByEngine">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description">
+                        pass an optional search string for looking up all the languages solved by that engine
+                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - search results matching criteria </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-allLanguages-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-allLanguages-200-schema">
+                                  <div id='responses-allLanguages-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "search results matching criteria",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/Language"
+    }
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = Object.assign({}, defs);
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-allLanguages-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-allLanguages-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-allLanguages-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - bad input parameter </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 404 - no language found </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1135,7 +1397,7 @@ except ApiException as e:
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2018-06-03T20:43:14.969Z
+              Generated 2018-06-03T20:50:24.194Z
             </div>
           </div>
       </div>
