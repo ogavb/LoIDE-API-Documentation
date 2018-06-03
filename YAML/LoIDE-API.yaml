@@ -1,0 +1,70 @@
+---
+swagger: "2.0"
+info:
+  description: LoIDE API
+  version: 1.0.0
+  title: LoIDE API
+  license:
+    name: MIT License
+    url: https://github.com/DeMaCS-UNICAL/LoIDE/blob/master/LICENSE
+host: virtserver.swaggerhub.com
+basePath: /ogavb/LoIDE/1.0.0
+tags:
+- name: admins
+  description: Secured Admin-only calls
+- name: developers
+  description: Operations available to regular developers
+schemes:
+- https
+- http
+- ws
+paths:
+  /languages:
+    get:
+      tags:
+      - admins
+      - developers
+      summary: searches all the available languages
+      description: |
+        By passing in the appropriate options, you can search for
+        available languages in the system
+      operationId: getLanguages
+      produces:
+      - application/json
+      parameters:
+      - name: searchByEngine
+        in: query
+        description: pass an optional search string for looking up all the languages solved by that engine
+        required: false
+        type: string
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Language'
+        400:
+          description: bad input parameter
+        404:
+          description: no language found
+definitions:
+  Language:
+    type: object
+    required:
+    - name
+    - value
+    properties:
+      value:
+        type: string
+        example: asp
+      name:
+        type: string
+        example: ASP
+      description:
+        type: string
+        example: Answer set programming is a form of declarative programming oriented towards difficult search problems.
+    example:
+      name: ASP
+      description: Answer set programming is a form of declarative programming oriented towards difficult search problems.
+      value: asp
