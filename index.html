@@ -695,44 +695,21 @@ margin-bottom: 20px;
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-            defs.InventoryItem = {
+            defs.Language = {
   "type" : "object",
-  "required" : [ "id", "manufacturer", "name", "releaseDate" ],
+  "required" : [ "description", "name" ],
   "properties" : {
     "id" : {
       "type" : "string",
-      "format" : "uuid",
-      "example" : "d290f1ee-6c54-4b01-90e6-d701748f0851"
+      "example" : "asp"
     },
     "name" : {
       "type" : "string",
-      "example" : "Widget Adapter"
+      "example" : "ASP"
     },
-    "releaseDate" : {
+    "description" : {
       "type" : "string",
-      "format" : "int32",
-      "example" : "2016-08-29T09:12:33.001Z"
-    },
-    "manufacturer" : {
-      "$ref" : "#/definitions/Manufacturer"
-    }
-  }
-};
-            defs.Manufacturer = {
-  "required" : [ "name" ],
-  "properties" : {
-    "name" : {
-      "type" : "string",
-      "example" : "ACME Corporation"
-    },
-    "homePage" : {
-      "type" : "string",
-      "format" : "url",
-      "example" : "https://www.acme-corp.com"
-    },
-    "phone" : {
-      "type" : "string",
-      "example" : "408-867-5309"
+      "example" : "Answer set programming is a form of declarative programming oriented towards difficult search problems."
     }
   }
 };
@@ -752,10 +729,6 @@ margin-bottom: 20px;
             -->
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
-                  <li class="nav-header" data-group="Admins"><a href="#api-Admins">API Methods - Admins</a></li>
-                    <li data-group="Admins" data-name="addInventory" class="">
-                      <a href="#api-Admins-addInventory">addInventory</a>
-                    </li>
                   <li class="nav-header" data-group="Developers"><a href="#api-Developers">API Methods - Developers</a></li>
                     <li data-group="Developers" data-name="searchInventory" class="">
                       <a href="#api-Developers-searchInventory">searchInventory</a>
@@ -779,286 +752,6 @@ margin-bottom: 20px;
           </div>
         </div>
         <div id="sections">
-                <section id="api-Admins">
-                  <h1>Admins</h1>
-                    <div id="api-Admins-addInventory">
-                      <article id="api-Admins-addInventory-0" data-group="User" data-name="addInventory" data-version="0">
-                        <div class="pull-left">
-                          <h1>addInventory</h1>
-                          <p>adds an inventory item</p>
-                        </div>
-                        <div class="pull-right"></div>
-                        <div class="clearfix"></div>
-                        <p></p>
-                        <p class="marked">Adds an item to the system</p>
-                        <p></p>
-                        <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/languages</span></code></pre>
-                        <p>
-                          <h3>Usage and SDK Samples</h3>
-                        </p>
-                        <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Admins-addInventory-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Admins-addInventory-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Admins-addInventory-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Admins-addInventory-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Admins-addInventory-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Admins-addInventory-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Admins-addInventory-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Admins-addInventory-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Admins-addInventory-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Admins-addInventory-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Admins-addInventory-0-python">Python</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Admins-addInventory-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://virtserver.swaggerhub.com/ogavb/LoIDE/1.0.0/languages"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Admins-addInventory-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.AdminsApi;
-
-import java.io.File;
-import java.util.*;
-
-public class AdminsApiExample {
-
-    public static void main(String[] args) {
-        
-        AdminsApi apiInstance = new AdminsApi();
-        InventoryItem inventoryItem = ; // InventoryItem | Inventory item to add
-        try {
-            apiInstance.addInventory(inventoryItem);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AdminsApi#addInventory");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Admins-addInventory-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.AdminsApi;
-
-public class AdminsApiExample {
-
-    public static void main(String[] args) {
-        AdminsApi apiInstance = new AdminsApi();
-        InventoryItem inventoryItem = ; // InventoryItem | Inventory item to add
-        try {
-            apiInstance.addInventory(inventoryItem);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AdminsApi#addInventory");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Admins-addInventory-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Admins-addInventory-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">InventoryItem *inventoryItem = ; // Inventory item to add (optional)
-
-AdminsApi *apiInstance = [[AdminsApi alloc] init];
-
-// adds an inventory item
-[apiInstance addInventoryWith:inventoryItem
-              completionHandler: ^(NSError* error) {
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Admins-addInventory-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var LoIdeApi = require('lo_ide_api');
-
-var api = new LoIdeApi.AdminsApi()
-
-var opts = { 
-  'inventoryItem':  // {InventoryItem} Inventory item to add
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.addInventory(opts, callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Admins-addInventory-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Admins-addInventory-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class addInventoryExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new AdminsApi();
-            var inventoryItem = new InventoryItem(); // InventoryItem | Inventory item to add (optional) 
-
-            try
-            {
-                // adds an inventory item
-                apiInstance.addInventory(inventoryItem);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AdminsApi.addInventory: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Admins-addInventory-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\AdminsApi();
-$inventoryItem = ; // InventoryItem | Inventory item to add
-
-try {
-    $api_instance->addInventory($inventoryItem);
-} catch (Exception $e) {
-    echo 'Exception when calling AdminsApi->addInventory: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Admins-addInventory-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::AdminsApi;
-
-my $api_instance = WWW::SwaggerClient::AdminsApi->new();
-my $inventoryItem = WWW::SwaggerClient::Object::InventoryItem->new(); # InventoryItem | Inventory item to add
-
-eval { 
-    $api_instance->addInventory(inventoryItem => $inventoryItem);
-};
-if ($@) {
-    warn "Exception when calling AdminsApi->addInventory: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Admins-addInventory-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.AdminsApi()
-inventoryItem =  # InventoryItem | Inventory item to add (optional)
-
-try: 
-    # adds an inventory item
-    api_instance.add_inventory(inventoryItem=inventoryItem)
-except ApiException as e:
-    print("Exception when calling AdminsApi->addInventory: %s\n" % e)</code></pre>
-                            </div>
-                          </div>
-
-                          <h2>Parameters</h2>
-
-
-
-                            <div class="methodsubtabletitle">Body parameters</div>
-                            <table id="methodsubtable">
-                              <tr>
-                                <th width="150px">Name</th>
-                                <th>Description</th>
-                              </tr>
-                                <tr><td style="width:150px;">inventoryItem </td>
-<td>
-
-
-<script>
-$(document).ready(function() {
-  var schemaWrapper = {
-  "in" : "body",
-  "name" : "inventoryItem",
-  "description" : "Inventory item to add",
-  "required" : false,
-  "schema" : {
-    "$ref" : "#/definitions/InventoryItem"
-  }
-};
-  var schema = schemaWrapper.schema;
-  if (schema.$ref != null) {
-    schema = defsParser.$refs.get(schema.$ref);
-  } else {
-    schemaWrapper.definitions = Object.assign({}, defs);
-    $RefParser.dereference(schemaWrapper).catch(function(err) {
-      console.log(err);
-    });
-  }
-
-  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_addInventory_inventoryItem');
-  result.empty();
-  result.append(view.render());
-});
-</script>
-<div id="d2e199_addInventory_inventoryItem"></div>
-</td>
-</tr>
-
-                            </table>
-
-
-
-                          <h2>Responses</h2>
-                            <h3> Status: 201 - item created </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                            </div>
-
-                            <h3> Status: 400 - invalid input, object invalid </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                            </div>
-
-                            <h3> Status: 409 - an existing item already exists </h3>
-
-                            <ul class="nav nav-tabs nav-tabs-examples" >
-                            </ul>
-
-                            <div class="tab-content" style='margin-bottom: 10px;'>
-                            </div>
-
-                        </article>
-                      </div>
-                      <hr>
-                  </section>
                 <section id="api-Developers">
                   <h1>Developers</h1>
                     <div id="api-Developers-searchInventory">
@@ -1115,7 +808,7 @@ public class DevelopersApiExample {
         Integer skip = 56; // Integer | number of records to skip for pagination
         Integer limit = 56; // Integer | maximum number of records to return
         try {
-            array[InventoryItem] result = apiInstance.searchInventory(searchString, skip, limit);
+            array[Language] result = apiInstance.searchInventory(searchString, skip, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DevelopersApi#searchInventory");
@@ -1136,7 +829,7 @@ public class DevelopersApiExample {
         Integer skip = 56; // Integer | number of records to skip for pagination
         Integer limit = 56; // Integer | maximum number of records to return
         try {
-            array[InventoryItem] result = apiInstance.searchInventory(searchString, skip, limit);
+            array[Language] result = apiInstance.searchInventory(searchString, skip, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DevelopersApi#searchInventory");
@@ -1160,7 +853,7 @@ DevelopersApi *apiInstance = [[DevelopersApi alloc] init];
 [apiInstance searchInventoryWith:searchString
     skip:skip
     limit:limit
-              completionHandler: ^(array[InventoryItem] output, NSError* error) {
+              completionHandler: ^(array[Language] output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -1218,7 +911,7 @@ namespace Example
             try
             {
                 // searches inventory
-                array[InventoryItem] result = apiInstance.searchInventory(searchString, skip, limit);
+                array[Language] result = apiInstance.searchInventory(searchString, skip, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1390,7 +1083,7 @@ except ApiException as e:
   "schema" : {
     "type" : "array",
     "items" : {
-      "$ref" : "#/definitions/InventoryItem"
+      "$ref" : "#/definitions/Language"
     }
   }
 };
@@ -1442,7 +1135,7 @@ except ApiException as e:
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2018-06-03T16:11:59.953Z
+              Generated 2018-06-03T20:43:14.969Z
             </div>
           </div>
       </div>
