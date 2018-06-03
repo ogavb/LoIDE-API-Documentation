@@ -156,6 +156,6 @@ h2. Models
 
         h3. Language
         ||Field Name||Required||Type||Description||
-         |id | |String | |
+         |value | |String | |
  |name | |String | |
  |description | |String | |
